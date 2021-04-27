@@ -15,28 +15,57 @@
             <h2 id="searchHeader" class="searchChild">Search for a City:</h2>
             <textarea id="searchText" class="searchChild"></textarea></br>
             <button id="searchBtn" class="searchChild">Search</button>
-            <ul id="searchHistory" class="searchChild"></ul>
+            <div id="searchHistory" class="searchChild"></div>
         </div>
-        <div id="resultsDiv">
-            <div id="resultCity">
-                <h2 id="resultHeader">Example City</h2>
-                <ul id="resultList">
-                    <li id="temp">Temp: </li>
-                    <li id="wind">Wind: </li>
-                    <li id="humidity">Humidity: </li>
-                    <li id="uv">UV Index: </li>
-                </ul>
+        <div class="resultsDiv">
+            <div class="resultCity">
+                <h2 id="resultHeader"></h2>
+                <p id="temp">Temp: <span id="tempResult"></span>° F</p>
+                <p id="wind">Wind: <span id="windResult"></span> MPH</p>
+                <p id="humidity">Humidity: <span id="humidityResult"></span>%</p>
+                <p id="uv">UV Index: <span id="uvResult"></span></p>
             </div>
             <h3 id="fiveDayHeader">5-Day Forecast:</h3>
             <div class="cardContainer">
-                <div class="card" id="dayOne">Words</div>
-                <div class="card" id="dayTwo">Words</div>
-                <div class="card" id="dayThree">Words</div>
-                <div class="card" id="dayFour">Words</div>
-                <div class="card" id="dayFive">Words</div>
+                <div class="card" id="dayOne">
+                    <h4 class="cardHead"></h4>
+                    <img class="cardImg">
+                    <p class="cardTemp">Temp: </p>
+                    <p class="cardWind">Wind: </p>
+                    <p class="cardHumidity">Humidity: </p>
+                </div>
+                <div class="card" id="dayTwo">
+                    <h4 class="cardHead"></h4>
+                    <img class="cardImg">
+                    <p class="cardTemp">Temp: </p>
+                    <p class="cardWind">Wind: </p>
+                    <p class="cardHumidity">Humidity: </p>
+                </div>
+                <div class="card" id="dayThree">
+                    <h4 class="cardHead"></h4>
+                    <img class="cardImg">
+                    <p class="cardTemp">Temp: </p>
+                    <p class="cardWind">Wind: </p>
+                    <p class="cardHumidity">Humidity: </p>
+                </div>
+                <div class="card" id="dayFour">
+                    <h4 class="cardHead"></h4>
+                    <img class="cardImg">
+                    <p class="cardTemp">Temp: </p>
+                    <p class="cardWind">Wind: </p>
+                    <p class="cardHumidity">Humidity: </p>
+                </div>
+                <div class="card" id="dayFive">
+                    <h4 class="cardHead"></h4>
+                    <img class="cardImg">
+                    <p class="cardTemp">Temp: </p>
+                    <p class="cardWind">Wind: </p>
+                    <p class="cardHumidity">Humidity: </p>
+                </div>
             </div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
