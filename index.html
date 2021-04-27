@@ -7,8 +7,36 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Document</title>
 </head>
-<body>
-    <h1>This is a weather site!</h1>
+    <header>
+        <h1>Weather Dashboard</h1>
+    </header>
+    <div class="container">
+        <div id="searchDiv">
+            <h2 id="searchHeader" class="searchChild">Search for a City:</h2>
+            <textarea id="searchText" class="searchChild"></textarea></br>
+            <button id="searchBtn" class="searchChild">Search</button>
+            <ul id="searchHistory" class="searchChild"></ul>
+        </div>
+        <div id="resultsDiv">
+            <div id="resultCity">
+                <h2 id="resultHeader">Example City</h2>
+                <ul id="resultList">
+                    <li id="temp">Temp: </li>
+                    <li id="wind">Wind: </li>
+                    <li id="humidity">Humidity: </li>
+                    <li id="uv">UV Index: </li>
+                </ul>
+            </div>
+            <h3 id="fiveDayHeader">5-Day Forecast:</h3>
+            <div class="cardContainer">
+                <div class="card" id="dayOne">Words</div>
+                <div class="card" id="dayTwo">Words</div>
+                <div class="card" id="dayThree">Words</div>
+                <div class="card" id="dayFour">Words</div>
+                <div class="card" id="dayFive">Words</div>
+            </div>
+        </div>
+    </div>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>

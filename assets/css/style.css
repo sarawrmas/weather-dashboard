@@ -1,3 +1,59 @@
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 h1 {
-    color: red;
+    background-image: linear-gradient(to right, blue, purple);
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+li {
+    list-style-type: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.searchDiv {
+    display: flex;
+    flex-direction: column;
+}
+
+.searchChild {
+    width: 100%;
+    border-radius: 3px;
+}
+
+textarea {
+    height: 15px;
+    resize: none;
+}
+
+#searchBtn {
+    background-color: cornflowerblue;
+    color: white;
+}
+
+.resultsDiv {
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    background-color:aquamarine;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+    margin: 20px;
+    padding: 50px;
+}
+
+.cardContainer {
+    display: flex;
+    flex-direction: row;
+    padding: 2px 16px;
 }
