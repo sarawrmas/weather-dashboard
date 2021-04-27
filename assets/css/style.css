@@ -55,20 +55,24 @@ textarea {
     display: flex;
     flex-direction: column;
 }
-
+/* 
 .resultCity {
     border: solid black 1px;
     padding: 20px;
-}
+} */
 
 .card {
     background-color: darkslategray;
     color: white;
     border-radius: 5px;
     margin: 20px;
-    height: 200px;
+    height: 250px;
     width: 150px;
     padding: 10px;
+}
+
+.cardHead, .cardImg {
+    text-align: center;
 }
 
 .cardContainer {
