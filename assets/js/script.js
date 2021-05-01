@@ -1,17 +1,39 @@
 var searchButton = document.getElementById("searchBtn");
 var city = document.getElementById("searchText");
+var cityList = [];
+var storageItems = getStorageItems();
+
+for (var i = 0; i < storageItems.length; i++) {
+    cityList.push(storageItems[i]);
+    var newCityBtn = document.createElement("button");
+    newCityBtn.className = "searchResult";
+    newCityBtn.innerHTML = storageItems[i];
+    var newCityList = document.getElementById("searchHistory");
+    newCityList.appendChild(newCityBtn);
+
+    newCityBtn.addEventListener("click", function() {
+        getCurrentWeather(this.innerHTML);
+    })
+}
 
 var searchByCity = function() {
+    cityList.push(city.value);
+    localStorage.setItem("cities", JSON.stringify(cityList));
     var newCityBtn = document.createElement("button");
     newCityBtn.className = "searchResult";
     newCityBtn.innerHTML = city.value;
     var newCityList = document.getElementById("searchHistory");
     newCityList.appendChild(newCityBtn);
+
     newCityBtn.addEventListener("click", function() {
-        var buttonText = newCityBtn.innerHTML;
-        city.value = buttonText;
-        newCityBtn.remove();
+        getCurrentWeather(newCityBtn.innerHTML);
     })
+    return city.value
+}
+
+function getStorageItems() {
+    var cities = JSON.parse(localStorage.getItem("cities")) || [];
+    return cities;
 }
 
 var header = document.getElementById("resultHeader");
@@ -20,8 +42,8 @@ var wind = document.getElementById("windResult");
 var humidity = document.getElementById("humidityResult");
 var uv = document.getElementById("uvResult")
 
-var getCurrentWeather = function() {    
-    fetch("https://api.openweathermap.org/data/2.5/weather?q=" + city.value + "&units=imperial&appid=75d360e486d3c1c8a360575d67c292a7")
+var getCurrentWeather = function(cityName) {   
+    fetch("https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=imperial&appid=75d360e486d3c1c8a360575d67c292a7")
         .then(function(response) {
             return response.json();
         })
@@ -64,10 +86,7 @@ var getCurrentWeather = function() {
 }
 
 searchButton.addEventListener("click", function() {
-    searchByCity();
-    getCurrentWeather();
+    var cityName = searchByCity();
+    getCurrentWeather(cityName);
     city.value = "";
 });
-
-// api key: 75d360e486d3c1c8a360575d67c292a7
-// https://openweathermap.org/api/one-call-api
